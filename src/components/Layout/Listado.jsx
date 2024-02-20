@@ -36,7 +36,7 @@ export const Listado = ({ control, setCambiar, eliminarProducto  }) => {
                 <span className="font-normal uppercase">{control.info}</span>
             </p>
 
-            <div className="flex justify-between mt-10">
+            <div className="flex justify-between flex-col sm:flex-row mt-2 sm:mt-5 space-y-3">
                 <button className='py-2 px-10 bg-yellow-500  hover:bg-yellow-600 text-white font-bold uppercase rounded-lg'
                     type="button"
                     onClick={() => setCambiar(control)}>
@@ -44,7 +44,7 @@ export const Listado = ({ control, setCambiar, eliminarProducto  }) => {
                     
                 </button>
 
-                <button className="py-2 px-10 bg-yellow-500 hover:bg-yellow-600 text-white font-bold uppercase rounded-lg"
+                <button className="py-2 px-10 bg-red-500 hover:bg-red-600 text-white font-bold uppercase rounded-lg"
                     type="button"
                     onClick={handleEliminar}>
                     Eliminar
