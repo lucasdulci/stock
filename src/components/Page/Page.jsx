@@ -38,7 +38,7 @@ export const Page = () => {
 
   return (
 
-    <div className={`w-full bg-gradient-to-r from-slate-20 bg-slate-300 dark:bg-gradient-to-r  dark:from-slate-600 dark:bg-black min-h-screen transition-colors duration-500 pt-14 ${theme === "dark" ? "dark" : ""}`}>
+    <div className={`w-full bg-gradient-to-r from-slate-20 pb-10 bg-slate-300 dark:bg-gradient-to-r  dark:from-slate-600 dark:bg-black min-h-screen transition-colors duration-500 pt-14 ${theme === "dark" ? "dark" : ""}`}>
       <div className='flex justify-end pr-10 pb-12 lg:-mt-10  '>
         <button onClick={handleChangeTheme}>
           <svg width="28" height="30" viewBox="0 0 28 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -65,7 +65,7 @@ export const Page = () => {
       <Header />
 
       </div>
-      <div className="mt-8 md:flex container ">
+      <div className="mt-8  md:flex container ">
         <StockInput
           controlador={controlador}
           setControlador={setControlador}

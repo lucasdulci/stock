@@ -46,7 +46,7 @@ export const Login = () => {
 
           <div className='block text-yellow-500 font-black text-xl my-8'>
             <label htmlFor="contraseña">Contraseña</label>
-            <input type="password" id="contraseña" name="contraseña" className="border-2 w-full p-2 mt-2  text-black rounded-md" onChange={handleChange} value={formData.contraseña} />
+            <input type="password" id="contraseña" name="contraseña" className="border-2 w-full p-2 mt-2 font-normal text-black rounded-md" onChange={handleChange} value={formData.contraseña} />
           </div>
 
           <input type="submit" className="font-bold justify-center text-white bg-yellow-500 rounded-lg p-3 w-full cursor-pointer hover:bg-yellow-600" /> 
