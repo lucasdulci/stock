@@ -2,12 +2,28 @@ import { useState, useEffect } from "react"
 import { Header } from "../Layout/Header"
 import { StockInput } from "../Layout/StockInput"
 import { StockOutPut } from "../Layout/StockOutPut"
+import noiseDark from "../../assets/noise-dark.jpg"
+import noiseLight from "../../assets/noise-light.jpg"
 
 
 
 export const Page = () => {
   const [controlador, setControlador] = useState([])
   const [cambiar, setCambiar] = useState({})
+
+  useEffect(() => {
+     const obtenerLS = () => {
+        const controladorLS = JSON.parse(localStorage.getItem('controlador')) ?? []
+      console.log(controladorLS)
+        setControlador(controladorLS)
+     }
+     obtenerLS()
+  },[])
+
+  useEffect(() => {
+     localStorage.setItem('controlador', JSON.stringify(controlador))
+  },[controlador])
+  
 
   const eliminarProducto = (id) => {
     const stockActualizado = controlador.filter(stock => stock.id !== id)
@@ -26,6 +42,7 @@ export const Page = () => {
 
   const handleChangeTheme = () => {
     setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"))
+    document.querySelector('body').classList.toggle('dark')
   }
 
   useEffect(() => {
@@ -38,7 +55,9 @@ export const Page = () => {
 
   return (
 
-    <div className={`w-full bg-gradient-to-r from-slate-20 pb-10 bg-slate-300 dark:bg-gradient-to-r  dark:from-slate-600 dark:bg-black min-h-screen transition-colors duration-500 pt-14 ${theme === "dark" ? "dark" : ""}`}>
+
+    <div className={`w-full  min-h-screen pt-14 ${theme === "dark" ? "dark" : ""}`} style={{backgroundImage: `url(${theme === "dark" ? noiseDark : noiseLight})`, backgroundSize: "150px"}}
+    >
       <div className='flex justify-end pr-10 pb-12 lg:-mt-10  '>
         <button onClick={handleChangeTheme}>
           <svg width="28" height="30" viewBox="0 0 28 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -65,7 +84,7 @@ export const Page = () => {
       <Header />
 
       </div>
-      <div className="mt-8  md:flex container ">
+      <div className="mt-8  md:flex container">
         <StockInput
           controlador={controlador}
           setControlador={setControlador}

@@ -16,17 +16,18 @@ export const StockOutPut = ({ controlador, handleChangeTheme, setCambiar, elimin
     );
 
     return (
-        <div className='md:w-1/2 lg:w-3/5 md:h-screen md:overflow-y-scroll mx-4 '>
+        
+        <div className=' md:w-1/2 lg:w-3/5 md:h-screen md:overflow-y-scroll mx-4 sticky top-0'>
             <h2 className='font-black text-2xl  text-center uppercase mt-12 mb-3 md:mt-0 dark:text-white'>Listado de stock {''}
                 <span className='text-yellow-500'>disponible</span>
             </h2>
 
-            <div className="flex justify-center">
+            <div className=" flex justify-center ">
                 <input
                     type="text"
                     value={filtroNombre}
                     onChange={handleChange}
-                    placeholder="Filtrar por nombre..."
+                    placeholder="Filtrar por nombre del producto..."
                     className="border-3 rounded-lg mt-10 w-96 p-2 uppercase text-center "
                 />
             </div>
