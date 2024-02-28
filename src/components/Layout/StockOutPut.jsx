@@ -28,7 +28,7 @@ export const StockOutPut = ({ controlador, handleChangeTheme, setCambiar, elimin
                     value={filtroNombre}
                     onChange={handleChange}
                     placeholder="Filtrar por nombre del producto..."
-                    className="border-3 rounded-lg mt-10 w-96 p-2 uppercase text-center "
+                    className="border-3  mt-10 w-96 p-2 bg-transparent uppercase placeholder:text-center text-black dark:text-white border-b-2 dark:border-white border-black"
                 />
             </div>
 
@@ -45,7 +45,7 @@ export const StockOutPut = ({ controlador, handleChangeTheme, setCambiar, elimin
 
                     ))
                 ) : (
-                    <p className="text-center mt-20 font-bold text-2xl uppercase dark:text-white ">No se encontraron resultados</p>
+                    <p className="text-center mt-20 pb-16 font-bold text-2xl uppercase dark:text-white ">No se encontraron resultados</p>
                 )}
             </MagicMotion>
         </div>

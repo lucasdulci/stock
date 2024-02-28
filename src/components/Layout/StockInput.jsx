@@ -82,11 +82,11 @@ export const StockInput = ({ controlador, setControlador, cambiar, setCambiar })
                 </h2>
                 <form
                     onSubmit={handleSubmit}
-                    className='bg-white dark:bg-gray-800 shadow-md rounded-lg ' >
+                    className='bg-slate-100 dark:bg-transparent  shadow-md rounded-lg ' >
                     {error && <Error><p>Todos los campos son obligatorios</p></Error>}
                     <div className="p-4">
-                        <label className=" block text-yellow-500 uppercase font-black" htmlFor="producto">Producto</label>
-                        <input className="border-2 w-full p-2 mt-2 uppercase placeholder-gray-400 rounded-md" type="text" name="producto" id="producto" placeholder="Producto" value={nombre} onChange={(e) => setNombre(e.target.value)} />
+                        <label className=" block text-yellow-500 uppercase font-black " htmlFor="producto">Producto</label>
+                        <input className="border-2 w-full p-2 mt-2 uppercase  placeholder-gray-8400 rounded-md" type="text" name="producto" id="producto" placeholder="Producto" value={nombre} onChange={(e) => setNombre(e.target.value)} />
                     </div>
 
                     <div className="p-4" >

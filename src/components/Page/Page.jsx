@@ -56,7 +56,7 @@ export const Page = () => {
   return (
 
 
-    <div className={`w-full  min-h-screen pt-14 ${theme === "dark" ? "dark" : ""}`} style={{backgroundImage: `url(${theme === "dark" ? noiseDark : noiseLight})`, backgroundSize: "100px"}}
+    <div className={`w-full  min-h-screen pt-14 ${theme === "dark" ? "dark" : ""}`} style={{backgroundImage: `url(${theme === "dark" ? noiseDark : noiseLight})`, backgroundSize: "200px"}}
     >
       <div className='flex justify-end pr-10 pb-12 lg:-mt-10  '>
         <button onClick={handleChangeTheme}>
