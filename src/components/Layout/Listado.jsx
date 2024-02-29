@@ -2,6 +2,7 @@
 export const Listado = ({ control, setCambiar, eliminarProducto  }) => {
 
     const {nombre, producto, cantidad, fecha, info, id} = control
+  
 
     const handleEliminar = () => {
         const respuesta = confirm('¿Deseas eliminar este producto?')
@@ -9,6 +10,18 @@ export const Listado = ({ control, setCambiar, eliminarProducto  }) => {
         if(respuesta) { 
             eliminarProducto(id)
         }
+    }
+
+    const editar = () => {
+        setCambiar(control)
+    }
+
+    const scrollToTop = () => {
+        window.scrollTo({top: 0, behavior: 'smooth'})
+    }
+    const funcionesBoton = () => {
+        editar()
+        scrollToTop()
     }
 
     return (
@@ -36,7 +49,8 @@ export const Listado = ({ control, setCambiar, eliminarProducto  }) => {
             <div className="flex flex-col sm:flex-row justify-between mt-2 md:mt-5 space-y-3 sm:space-y-0 sm:space-x-3">
                 <button className='py-3 px-10 bg-yellow-500  hover:bg-yellow-600 text-white font-bold uppercase rounded-lg '
                     type="button"
-                    onClick={() => setCambiar(control)}>
+                    onClick={funcionesBoton}
+                >
                     Editar
                     
                 </button>
