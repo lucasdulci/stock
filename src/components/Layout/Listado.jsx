@@ -13,7 +13,7 @@ export const Listado = ({ control, setCambiar, eliminarProducto  }) => {
 
     return (
 
-        <div className='mx-5 my-8 bg-white dark:bg-gray-500 shadow-md px-10 py-4 rounded-xl'>
+        <div className='mx-5 mt-8 bg-white bg-opacity-20 dark:bg-slate-700 dark:bg-opacity-25 shadow-md px-10 py-4 rounded-xl'>
 
 
             <p className='font-bold text-xl mb-1  dark:text-slate-200  text-gray-700 uppercase'>Producto: {''}
@@ -28,10 +28,7 @@ export const Listado = ({ control, setCambiar, eliminarProducto  }) => {
                 <span className="font-normal uppercase ">{control.fecha}</span>
             </p>
 
-            <p className='font-bold text-xl mb-1 text-gray-700  dark:text-slate-200 uppercase'>Color: {''}
-                <span className="font-normal uppercase ">{control.color}</span>
-            </p>
-
+            
             <p className='font-bold text-xl mb-1  text-gray-700  dark:text-slate-200 uppercase'>Información: {''}
                 <span className="font-normal uppercase">{control.info}</span>
             </p>

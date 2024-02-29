@@ -7,7 +7,6 @@ export const StockInput = ({ controlador, setControlador, cambiar, setCambiar })
     const [nombre, setNombre] = useState('')
     const [cantidad, setCantidad] = useState('')
     const [fecha, setFecha] = useState('')
-    const [color, setColor] = useState('')
     const [info, setInfo] = useState('')
 
     const [error, setError] = useState(false)
@@ -17,7 +16,6 @@ export const StockInput = ({ controlador, setControlador, cambiar, setCambiar })
             setNombre(cambiar.nombre)
             setCantidad(cambiar.cantidad)
             setFecha(cambiar.fecha)
-            setColor(cambiar.color)
             setInfo(cambiar.info)
 
         }
@@ -35,7 +33,7 @@ export const StockInput = ({ controlador, setControlador, cambiar, setCambiar })
 
         // validation
 
-        if ([nombre, cantidad, fecha, color, info].includes('')) {
+        if ([nombre, cantidad, fecha, info].includes('')) {
             setError(true)
             return
         }
@@ -46,7 +44,6 @@ export const StockInput = ({ controlador, setControlador, cambiar, setCambiar })
             nombre,
             cantidad,
             fecha,
-            color,
             info
         }
 
@@ -69,7 +66,6 @@ export const StockInput = ({ controlador, setControlador, cambiar, setCambiar })
         setNombre('')
         setCantidad('')
         setFecha('')
-        setColor('')
         setInfo('')
 
     }
@@ -82,7 +78,7 @@ export const StockInput = ({ controlador, setControlador, cambiar, setCambiar })
                 </h2>
                 <form
                     onSubmit={handleSubmit}
-                    className='bg-slate-100 dark:bg-transparent  shadow-md rounded-lg ' >
+                    className='bg-slate-100 bg-opacity-50 dark:bg-gray-700 dark:bg-opacity-25 shadow-lg rounded-lg ' >
                     {error && <Error><p>Todos los campos son obligatorios</p></Error>}
                     <div className="p-4">
                         <label className=" block text-yellow-500 uppercase font-black " htmlFor="producto">Producto</label>
@@ -99,19 +95,6 @@ export const StockInput = ({ controlador, setControlador, cambiar, setCambiar })
                         <input className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md" type="date" name="fecha" id="fecha" value={fecha} onChange={(e) => setFecha(e.target.value)} />
                     </div>
 
-                    <div className="p-4">
-
-                        <select required className="w-full p-2 mt-2 rounded-md  placeholder-gray-400 border-2 uppercase"
-                            onChange={(e) => setColor(e.target.value)}
-                        >
-                            <option value="">Seleccionar color</option>
-                            <option value="azul">Azul</option>
-                            <option value="gris">Gris</option>
-                            <option value="gris-claro">Gris Claro</option>
-                            <option value="amarillo">Amarillo</option>
-
-                        </select>
-                    </div>
 
                     <div className="p-4" >
                         <label className=" text-yellow-500 uppercase font-black" htmlFor="informacion">Información adicional</label>

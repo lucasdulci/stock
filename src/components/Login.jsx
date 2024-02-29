@@ -19,17 +19,17 @@ export const Login = () => {
 
   return (
     <div className='flex justify-center items-center px-8 h-screen'>
-      <div className='rounded-lg bg-white p-12'>
+      <div className='rounded-lg bg-gray-50 p-12'>
         <img src="/logostorage-amarillo.png" alt="logotipo" />
         
 
-        <form onSubmit={handleLogin} className='bg-white  rounded-lg' >
+        <form onSubmit={handleLogin} className=' rounded-lg' >
           <div className='block text-yellow-500 font-black text-xl mt-16 my-8'>
             <label htmlFor="username">Usuario</label>
             <input type="text" id="username" name="username" className="border-2 w-full p-2 mt-2 text-black rounded-md font-normal" />
           </div>
 
-          <div className='block text-yellow-500 font-black text-xl  my-8'>
+          <div className='block text-yellow-500 font-black text-xl my-8'>
             <label htmlFor="password">Contraseña</label>
             <input type="password" id="password" name="password" className="border-2 w-full p-2 mt-2 font-normal text-black rounded-md"/>
           </div>
