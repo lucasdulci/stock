@@ -16,20 +16,20 @@ export const Listado = ({ control, setCambiar, eliminarProducto  }) => {
         <div className='mx-5 mt-8 bg-white bg-opacity-20 dark:bg-slate-700 dark:bg-opacity-25 shadow-md px-10 py-4 rounded-xl'>
 
 
-            <p className='font-bold text-xl mb-1  dark:text-slate-200  text-gray-700 uppercase'>Producto: {''}
+            <p className='font-bold text-lg md:text-xl mb-1  dark:text-slate-200  text-gray-700 uppercase'>Producto: {''}
                 <span className="font-normal uppercase ">{control.nombre}</span>
             </p>
 
-            <p className='font-bold text-xl mb-1 dark:text-slate-200 text-gray-700 uppercase'>Cantidad: {''}
+            <p className='font-bold text-lg md:text-xl mb-1 dark:text-slate-200 text-gray-700 uppercase'>Cantidad: {''}
                 <span className="font-normal uppercase " >{control.cantidad}</span>
             </p>
 
-            <p className='font-bold text-xl mb-1 text-gray-700  dark:text-slate-200 uppercase'>Fecha: {''}
+            <p className='font-bold text-lg md:text-xl mb-1 text-gray-700  dark:text-slate-200 uppercase'>Fecha: {''}
                 <span className="font-normal uppercase ">{control.fecha}</span>
             </p>
 
             
-            <p className='font-bold text-xl mb-1  text-gray-700  dark:text-slate-200 uppercase'>Información: {''}
+            <p className='font-bold text-lg md:text-xl mb-1  text-gray-700  dark:text-slate-200 uppercase'>Información: {''}
                 <span className="font-normal uppercase">{control.info}</span>
             </p>
 
