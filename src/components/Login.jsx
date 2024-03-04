@@ -1,4 +1,4 @@
-import  { useState } from "react";
+import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import userData from './db.json';
 
@@ -19,9 +19,14 @@ export const Login = () => {
 
   return (
     <div className='flex justify-center items-center px-8 h-screen'>
-      <div className='rounded-lg bg-gray-50 p-12'>
+      <div className='rounded-lg bg-slate-100 bg-opacity-50 p-12'>
         <img src="/logostorage-amarillo.png" alt="logotipo" />
-        
+        <div className="flex justify-center items-center mt-3">
+
+          <h2 className='font-bold uppercase '>Control de {''}
+            <span className="text-yellow-500">Stock</span>
+          </h2>
+        </div>
 
         <form onSubmit={handleLogin} className=' rounded-lg' >
           <div className='block text-yellow-500 font-black text-xl mt-16 my-8'>
@@ -31,10 +36,10 @@ export const Login = () => {
 
           <div className='block text-yellow-500 font-black text-xl my-8'>
             <label htmlFor="password">Contraseña</label>
-            <input type="password" id="password" name="password" className="border-2 w-full p-2 mt-2 font-normal text-black rounded-md"/>
+            <input type="password" id="password" name="password" className="border-2 w-full p-2 mt-2 font-normal text-black rounded-md" />
           </div>
 
-          <input type="submit" value="Iniciar Sesión" className="font-bold justify-center text-white bg-yellow-500 uppercase rounded-lg p-3 w-full cursor-pointer hover:bg-yellow-600" /> 
+          <input type="submit" value="Iniciar Sesión" className="font-bold justify-center text-white bg-yellow-500 uppercase rounded-lg p-3 w-full cursor-pointer hover:bg-yellow-600" />
         </form>
       </div>
     </div>

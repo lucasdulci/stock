@@ -1,9 +1,9 @@
 
 {
   "users": [
-    { "id": 1, "username": "admin", "password": "admin" },
+    { "id": 1, "username": "administrador", "password": "administrador" },
     { "id": 2, "username": "montaje", "password": "montaje" },
-    { "id": 3, "username": "nicolas", "password": "nicolas" },
+    { "id": 3, "username": "nicolas", "password": "al102509" },
     { "id": 4, "username": "sofia", "password": "sofia" }
 
   ]
