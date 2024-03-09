@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { MagicMotion } from "react-magic-motion";
 import { Tabla } from "./Tabla";
-import { getDocs, collection, onSnapshot, deleteDoc } from "firebase/firestore";
+import { getDocs,doc, collection, onSnapshot, deleteDoc } from "firebase/firestore";
 import db from "../../db/db";
 
 export const StockOutPut = ({ handleChangeTheme, setCambiar, eliminarProducto, minimoStock, getStockColorClass }) => {
@@ -39,6 +39,7 @@ export const StockOutPut = ({ handleChangeTheme, setCambiar, eliminarProducto, m
             }
         }
     };
+
     const handleChange = (e) => {
         setFiltroNombre(e.target.value);
         setFiltrando(true);
@@ -54,6 +55,12 @@ export const StockOutPut = ({ handleChangeTheme, setCambiar, eliminarProducto, m
             window.removeEventListener("resize", handleResize);
         };
     }, []);
+
+    const productosFiltrados = filtrando
+        ? productos.filter((producto) =>
+              producto.nombre.toLowerCase().includes(filtroNombre.toLowerCase())
+          )
+        : productos;
 
     return (
         <div className={`md:w-1/2 lg:w-full lg:h-full md:pl-1 sticky top-0 ${mostrarTabla ? "md:w-1/2 lg:w-full" : ""}`}>
@@ -71,7 +78,9 @@ export const StockOutPut = ({ handleChangeTheme, setCambiar, eliminarProducto, m
             </div>
             {mostrarTabla ? (
                 <Tabla
-                    productos={productos}
+                    productosFiltrados={productosFiltrados}
+                    setProductos={setProductos}
+                    productos={productosFiltrados}
                     setCambiar={setCambiar}
                     eliminarProducto={eliminarProducto}
                     minimoStock={minimoStock}
@@ -79,10 +88,10 @@ export const StockOutPut = ({ handleChangeTheme, setCambiar, eliminarProducto, m
                 />
             ) : (
                 <MagicMotion>
-                    {filtrando && productos.length === 0 ? (
+                    {productosFiltrados.length === 0 ? (
                         <p className="text-center mt-20 pb-16 font-bold text-2xl uppercase dark:text-white">No se encontraron resultados</p>
                     ) : (
-                        productos.map((producto) => (
+                        productosFiltrados.map((producto) => (
                             <div key={producto.id} className='mx-5 mt-8 bg-white bg-opacity-20 dark:bg-slate-700 dark:bg-opacity-25 shadow-md px-10 py-4 rounded-xl'>
                                 <p className='font-bold text-lg md:text-xl mb-1 dark:text-slate-200 text-gray-700 uppercase'>Producto: {''}
                                     <span className="font-normal uppercase">{producto.nombre}</span>

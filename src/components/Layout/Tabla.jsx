@@ -2,9 +2,9 @@ import { useState, useRef, useEffect } from 'react';
 import { deleteDoc, doc, onSnapshot,collection, updateDoc } from 'firebase/firestore';
 import db from '../../db/db'; // Importa tu instancia de Firestore
 
-export const Tabla = ({ setCambiar, eliminarProducto,minimoStock,  getStockColorClass }) => {
+export const Tabla = ({productos,setProductos, setCambiar,productosFiltrados , eliminarProducto,minimoStock,  getStockColorClass }) => {
     const [ordenAscendente, setOrdenAscendente] = useState(true);
-    const [productos, setProductos] = useState([]);
+    // const [productos, setProductos] = useState([]);
     const inputRef = useRef(null);
 
     const scrollToTop = () => {
@@ -36,11 +36,23 @@ export const Tabla = ({ setCambiar, eliminarProducto,minimoStock,  getStockColor
                 cantidad: control.cantidad,
                 minimoStock: control.minimoStock
             });
+            // setProductos(prevProductos => prevProductos.map(producto => {
+            //     if (producto.id === control.id) {
+            //         return {
+            //             ...producto,
+            //             nombre: control.nombre,
+            //             fecha: control.fecha,
+            //             cantidad: control.cantidad,
+            //             minimoStock: control.minimoStock
+            //         };
+            //     }
+            //     return producto;
+            // }))
             console.log('Producto actualizado correctamente');
         } catch (error) {
             console.error('Error al actualizar el producto:', error);
         }
-    };;
+    };
 
     const handleFiltrarColor = () => {
         setOrdenAscendente(!ordenAscendente);
@@ -71,7 +83,10 @@ export const Tabla = ({ setCambiar, eliminarProducto,minimoStock,  getStockColor
                 </div>
                 <div className='col-span-1 font-bold uppercase p-1'>Acciones</div>
             </div>
-            {sortedProductos.map(producto => (
+            {productosFiltrados.length === 0 ? (
+                        <p className="text-center mt-20 pb-16 font-bold text-2xl uppercase dark:text-white">No se encontraron resultados</p>
+                    ) : (
+            sortedProductos.map(producto => (
                 <div key={producto.id} className='grid grid-cols-5 border-b font-bold text-gray-600 dark:text-white'>
                     <div className="uppercase p-1 col-span-1">{producto.nombre}</div>
                     <div className="uppercase  p-1 col-span-1">{producto.fecha}</div>
@@ -84,7 +99,7 @@ export const Tabla = ({ setCambiar, eliminarProducto,minimoStock,  getStockColor
                         <button onClick={() => handleEliminar(producto.id)} className="p-2  bg-red-500 hover:bg-red-700 text-white font-bold rounded-lg">Eliminar</button>
                     </div>
                 </div>
-            ))}
+            )))}
         </div>
     );
 };
