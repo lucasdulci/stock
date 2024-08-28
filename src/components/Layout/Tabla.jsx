@@ -95,7 +95,7 @@ export const Tabla = ({productos,setProductos, setCambiar,productosFiltrados , e
                         {producto.minimoStock}
                     </div>
                     <div className="uppercase col-span-1 flex justify-center gap-4 items-center m-1">
-                        <button onClick={() => funcionesBoton(producto)} className="p-2 px-4 bg-yellow-500 hover:bg-yellow-700 text-white font-bold rounded-lg ">Editar</button>
+                        <button onClick={() => funcionesBoton(producto)} className="p-2 px-4 bg-yellow-500 hover:bg-yellow-700 text-white font-bold alquilerrounded-lg ">Editar</button>
                         <button onClick={() => handleEliminar(producto.id)} className="p-2  bg-red-500 hover:bg-red-700 text-white font-bold rounded-lg">Eliminar</button>
                     </div>
                 </div>
